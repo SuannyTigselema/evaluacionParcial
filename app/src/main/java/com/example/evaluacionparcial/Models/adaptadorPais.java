@@ -22,14 +22,8 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
 
     private Context mContext;
 
-    //Lista de productos q va a llegar al adaptador
     private ArrayList<pais> mLista;
-    public TextView nombre;
     public TextView lblNombre;
-    public TextView lblDescripcion;
-    public TextView lblPrecio;
-    public TextView lblUnidad;
-    public TextView lblHeader;
     public ImageView imgFoto;
 
     public adaptadorPais(Context context, ArrayList<pais> lista) {
@@ -50,7 +44,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
 
     }
 
-    //enlaza cada vista del viewholder con los datos de la Lista de productos
+    //enlaza cada vista del viewholder con los datos de la Lista
     @Override
     public void onBindViewHolder(@NonNull adaptadorPais.MyViewHolder holder, int position) {
 
@@ -69,7 +63,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
                 lblNombre=(TextView)itemView.findViewById(R.id.lblNombre);
-                imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
+               // imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
         }
     }
 

@@ -7,27 +7,29 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class pais {
-    public String nombre;
+    public String name;
     public String url;
 
     public pais(JSONObject a) throws JSONException {
-        this.nombre = a.getString("nombre").toString();
-        this.url = a.getString("imagen").toString();
+        String nombre= a.getString("name").toString();
+        this.name = a.getString("name").toString();
+      //  this.url = a.getString("imagen").toString();
     }
     //Metodo para parsear los datos
     public static ArrayList<pais> JsonObjectsBuild(JSONArray datos) throws JSONException {
         ArrayList<pais> pais = new ArrayList<>();
         for (int i = 0; i < datos.length() && i<20; i++) {
+
             pais.add(new pais(datos.getJSONObject(i)));
         }
         return pais;
     }
     public String getNombre() {
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.name = name;
     }
 
     public String getUrl() {
