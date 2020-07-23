@@ -70,7 +70,6 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
             super(itemView);
                 lblNombre=(TextView)itemView.findViewById(R.id.lblNombre);
                 imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
-
         }
     }
 
