@@ -1,6 +1,7 @@
 package com.example.evaluacionparcial.Models;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,9 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
     public void onBindViewHolder(@NonNull adaptadorPais.MyViewHolder holder, int position) {
 
         lblNombre.setText(mLista.get(position).getNombre());
+        String url=mLista.get(position).getUrl();
+        Uri imgUri=Uri.parse(url);
+        imgFoto.setImageURI(imgUri);
     }
 
     //Devuelve la cantidad del elementos del recyclerd
@@ -63,7 +67,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
                 lblNombre=(TextView)itemView.findViewById(R.id.lblNombre);
-               // imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
+                imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
         }
     }
 

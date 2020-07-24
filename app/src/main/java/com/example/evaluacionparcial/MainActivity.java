@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
         recyclerview.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         recyclerview.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
-       // placeholderview=(PlaceHolderView) findViewById(R.id.expandablePlaceHolder);
+      //  placeholderview=(PlaceHolderView) findViewById(R.id.galleryView);
         //placeholderview.addView(new HeaderView(this, "header"));
        //placeholderview.addView(new ChildView(this, movie));
         Map<String, String> datos = new HashMap<>();
         WebService ws= new WebService("https://restcountries.eu/rest/v2/all",datos,
                 MainActivity.this, (Asynchtask) MainActivity.this);
         ws.execute("GET");
+
     }
 
     @Override
@@ -48,8 +49,10 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
         ArrayList<pais> lstPaises = new ArrayList<pais>();
 
         lstPaises = pais.JsonObjectsBuild(JSONlistaPaises);
-
         adaptadorPais adapatorPais = new adaptadorPais(this, lstPaises);
+
+        //placeholderview.addView(new HeaderView(this, "header"));
+
         recyclerview.setAdapter(adapatorPais);
     }
 }

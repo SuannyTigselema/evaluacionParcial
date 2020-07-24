@@ -12,8 +12,6 @@
         android:layout_height="match_parent"
         tools:context="com.example.velmurugan.expandablerecyclerviewexample.MainActivity">
 
-
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvListaPaises"
             android:layout_width="match_parent"
