@@ -84,6 +84,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
         }
     }
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         int view_type;
         //Obtener los elementos q irán en cada item

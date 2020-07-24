@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -26,10 +27,12 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity implements Asynchtask {
     PlaceHolderView placeholderview=null;
     RecyclerView recyclerview=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         recyclerview=(RecyclerView)findViewById(R.id.rcvListaPaises);
         recyclerview.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -54,11 +57,15 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
         adaptadorPais adapatorPais = new adaptadorPais(this, lstPaises);
         //placeholderview.addView(new HeaderView(this, "header"));
         final ArrayList<pais> finalLstPaises = lstPaises;
+
+
         adapatorPais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int opcselec=recyclerview.getChildAdapterPosition(view);
                 String nombreselec= finalLstPaises.get(opcselec).getNombre();
+                Intent intent = new Intent(MainActivity.this,infoPaisActivity.class);
+                startActivity(intent);
 
             }
         });
