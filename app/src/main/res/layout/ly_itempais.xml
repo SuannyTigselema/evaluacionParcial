@@ -29,6 +29,13 @@
             android:text="Ecuador"
             android:textSize="15dp"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/lblCod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ecu"
+            android:textSize="10dp" />
 
     </LinearLayout>
 

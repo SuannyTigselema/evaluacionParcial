@@ -16,10 +16,13 @@ public class pais {
     public String name;
     public String url;
     public String code;
+    public String code2;
+
     public pais(JSONObject a) throws JSONException {
         this.name = a.getString("name").toString();
         code=a.getString("alpha2Code").toString();
-         this.url = "http://www.geognos.com/api/en/countries/flag/"+code+".png";
+        this.url = "http://www.geognos.com/api/en/countries/flag/"+code+".png";
+        this.code2=a.getString("alpha2Code").toString();
     }
 
     //Metodo para parsear los datos
@@ -30,6 +33,14 @@ public class pais {
             pais.add(new pais(datos.getJSONObject(i)));
         }
         return pais;
+    }
+
+    public String getCode2() {
+        return code2;
+    }
+
+    public void setCode2(String code2) {
+        this.code2 = code2;
     }
     public String getNombre() {
         return name;

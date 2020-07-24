@@ -28,6 +28,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
     private ArrayList<pais> mLista;
     private View.OnClickListener listener;
     public TextView lblNombre;
+    public TextView lblCod;
     public ImageView imgFoto;
 
     public adaptadorPais(Context context, ArrayList<pais> lista) {
@@ -61,6 +62,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
                 .fit()
                 .centerInside()
                 .into(imgFoto);
+        lblCod.setText(mLista.get(position).getCode2());
 
        // Uri imgUri=Uri.parse("https://www.natursan.net/wp-content/cebollas-2.jpg");
         //imgFoto.setImageURI(imgUri);
@@ -92,6 +94,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
             super(itemView);
                 lblNombre=(TextView)itemView.findViewById(R.id.lblNombre);
                 imgFoto=(ImageView) itemView.findViewById(R.id.imageView);
+                lblCod=(TextView)itemView.findViewById(R.id.lblCod);
         }
     }
 
