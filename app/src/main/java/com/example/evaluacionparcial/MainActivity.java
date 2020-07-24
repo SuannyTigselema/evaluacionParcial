@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.evaluacionparcial.Models.adaptadorPais;
 import com.example.evaluacionparcial.Models.pais;
@@ -22,7 +24,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements Asynchtask {
-    ArrayList<pais> listPais;
     PlaceHolderView placeholderview=null;
     RecyclerView recyclerview=null;
     @Override
@@ -51,8 +52,16 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
         lstPaises = pais.JsonObjectsBuild(JSONlistaPaises);
         adaptadorPais adapatorPais = new adaptadorPais(this, lstPaises);
-
         //placeholderview.addView(new HeaderView(this, "header"));
+        final ArrayList<pais> finalLstPaises = lstPaises;
+        adapatorPais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int opcselec=recyclerview.getChildAdapterPosition(view);
+                String nombreselec= finalLstPaises.get(opcselec).getNombre();
+
+            }
+        });
 
         recyclerview.setAdapter(adapatorPais);
     }

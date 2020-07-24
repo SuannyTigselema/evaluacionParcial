@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class pais implements Asynchtask {
+public class pais {
     public String name;
     public String url;
     public String code;
@@ -20,11 +20,6 @@ public class pais implements Asynchtask {
         this.name = a.getString("name").toString();
         code=a.getString("alpha2Code").toString();
          this.url = "http://www.geognos.com/api/en/countries/flag/"+code+".png";
-    }
-
-    @Override
-    public void processFinish(String result) throws JSONException {
-
     }
 
     //Metodo para parsear los datos

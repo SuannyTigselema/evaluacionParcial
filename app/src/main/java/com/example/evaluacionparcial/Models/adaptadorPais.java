@@ -17,7 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHolder> {
+public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHolder>
+        implements View.OnClickListener {
     private static final int TYPE_HEADER=0;
     private static final int TYPE_LIST=0;
 
@@ -25,6 +26,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
     private Context mContext;
 
     private ArrayList<pais> mLista;
+    private View.OnClickListener listener;
     public TextView lblNombre;
     public ImageView imgFoto;
 
@@ -42,6 +44,7 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
         View view;
            view= LayoutInflater.from(mContext)
                    .inflate(R.layout.ly_itempais,null,false);
+           view.setOnClickListener(this);
            return new MyViewHolder(view);
 
     }
@@ -67,6 +70,18 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
     @Override
     public int getItemCount() {
         return mLista.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(listener!=null)
+        {
+            listener.onClick(view);
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
