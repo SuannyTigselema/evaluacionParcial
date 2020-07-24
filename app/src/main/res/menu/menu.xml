@@ -12,7 +12,7 @@
             tools:ignore="DuplicateIds" />
         <item
             android:id="@+id/menu_seccion_3"
-            android:title="Lenguge" />
+            android:title="Lenguge"/>
     </group>
 
 </menu>

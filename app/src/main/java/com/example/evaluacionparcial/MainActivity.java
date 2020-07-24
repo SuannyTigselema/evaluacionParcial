@@ -64,7 +64,13 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
             public void onClick(View view) {
                 int opcselec=recyclerview.getChildAdapterPosition(view);
                 String nombreselec= finalLstPaises.get(opcselec).getNombre();
+
                 Intent intent = new Intent(MainActivity.this,infoPaisActivity.class);
+
+                Bundle b = new Bundle();
+                b.putString("pais",nombreselec);
+                intent.putExtras(b);
+
                 startActivity(intent);
 
             }
