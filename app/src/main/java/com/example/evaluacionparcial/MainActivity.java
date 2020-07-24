@@ -2,6 +2,7 @@ package com.example.evaluacionparcial;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
         recyclerview=(RecyclerView)findViewById(R.id.rcvListaPaises);
         recyclerview.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        recyclerview.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        recyclerview.setLayoutManager(new GridLayoutManager(this, 3));
 
       //  placeholderview=(PlaceHolderView) findViewById(R.id.galleryView);
         //placeholderview.addView(new HeaderView(this, "header"));

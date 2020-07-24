@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.evaluacionparcial.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -51,8 +52,15 @@ public class adaptadorPais extends RecyclerView.Adapter<adaptadorPais.MyViewHold
 
         lblNombre.setText(mLista.get(position).getNombre());
         String url=mLista.get(position).getUrl();
-        Uri imgUri=Uri.parse(url);
-        imgFoto.setImageURI(imgUri);
+        Picasso.with(mContext)
+                .load(url)
+                .error(R.drawable.ic_baseline_error_24)
+                .fit()
+                .centerInside()
+                .into(imgFoto);
+
+       // Uri imgUri=Uri.parse("https://www.natursan.net/wp-content/cebollas-2.jpg");
+        //imgFoto.setImageURI(imgUri);
     }
 
     //Devuelve la cantidad del elementos del recyclerd

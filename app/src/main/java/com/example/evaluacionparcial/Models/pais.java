@@ -30,7 +30,7 @@ public class pais implements Asynchtask {
     //Metodo para parsear los datos
     public static ArrayList<pais> JsonObjectsBuild(JSONArray datos) throws JSONException {
         ArrayList<pais> pais = new ArrayList<>();
-        for (int i = 0; i < datos.length() && i<20; i++) {
+        for (int i = 0; i < datos.length(); i++) {
 
             pais.add(new pais(datos.getJSONObject(i)));
         }
